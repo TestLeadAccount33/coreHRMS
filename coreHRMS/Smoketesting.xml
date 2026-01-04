@@ -1,0 +1,11 @@
+
+<suite name="Suite">
+  <test thread-count="5" name="SmokeTest">
+  
+    
+        
+    <classes>
+      <class name="com.Hrms.tests.LoginTest"/>
+    </classes>
+  </test> <!-- SmokeTest -->
+</suite> <!-- Suite -->

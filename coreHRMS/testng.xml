@@ -1,0 +1,24 @@
+
+<suite name="Suite">
+  <test thread-count="5" name="Smoke Testing">
+  
+   <groups>
+   
+       <run>
+       
+             <include name = "Smoke"/>
+       </run>
+   
+   </groups>
+  
+  
+    <classes>
+      <class name="com.Hrms.tests.TestPIMPage"/>
+      
+       <methods>
+          <include name="editEmployeeDetails"/>
+        </methods>
+      
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

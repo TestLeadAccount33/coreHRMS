@@ -1,0 +1,19 @@
+
+<suite name="Suite">
+  <test thread-count="5" name="Smoke Testing">
+  <groups>
+  
+    
+  </groups>
+  
+       <classes>
+     
+      <class name="com.Hrms.tests.TestPIMPage"/>
+      <methods> 
+      
+      <include name ="addEmployee"/>
+      
+      </methods> 
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

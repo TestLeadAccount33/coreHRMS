@@ -1,0 +1,185 @@
+<html>
+<head>
+<title>TestNG:  Firefox Test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Firefox Test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>8/1/0</td>
+</tr><tr>
+<td>Started on:</td><td>Mon Dec 08 00:34:41 IST 2025</td>
+</tr>
+<tr><td>Total time:</td><td>18 seconds (18066 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.Hrms.tests.TestPIMPage.addEmployeeThenVeify()'><b>addEmployeeThenVeify</b><br>Test class: com.Hrms.tests.TestPIMPage<br>Test method: Verify that an employee can be added successfully</td>
+<td><div><pre>java.lang.AssertionError: Element &lt;a class=&quot;l2_link empadd&quot; href=&quot;./lib/controllers/CentralController.php?reqcode=EMP&amp;capturemode=addmode&quot;&gt; could not be scrolled into view
+Build info: version: &apos;4.24.0&apos;, revision: &apos;748ffc9bc3&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [690e760d-affd-4a56-ad88-777fa0ba27ab, clickElement {id=9cf48ff5-d1ff-41c3-b8f3-5166062911a2}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 145.0.2, moz:accessibilityChecks: false, moz:buildID: 20251124145406, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 38948, moz:profile: C:\Users\HANUMA~1\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Element: [[FirefoxDriver: firefox on windows (690e760d-affd-4a56-ad88-777fa0ba27ab)] -&gt; xpath: //*[@id=&apos;pim&apos;]/ul/li[2]/a]
+Session ID: 690e760d-affd-4a56-ad88-777fa0ba27ab
+	at com.Hrms.utils.TestNGUtility.assertFail(TestNGUtility.java:41)
+	at com.Hrms.utils.CommonUtils.clickElement(CommonUtils.java:232)
+	at com.Hrms.tests.TestPIMPage.addEmployeeThenVeify(TestPIMPage.java:44)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1909666332", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1909666332'><pre>java.lang.AssertionError: Element &lt;a class=&quot;l2_link empadd&quot; href=&quot;./lib/controllers/CentralController.php?reqcode=EMP&amp;capturemode=addmode&quot;&gt; could not be scrolled into view
+Build info: version: &apos;4.24.0&apos;, revision: &apos;748ffc9bc3&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [690e760d-affd-4a56-ad88-777fa0ba27ab, clickElement {id=9cf48ff5-d1ff-41c3-b8f3-5166062911a2}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 145.0.2, moz:accessibilityChecks: false, moz:buildID: 20251124145406, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 38948, moz:profile: C:\Users\HANUMA~1\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Element: [[FirefoxDriver: firefox on windows (690e760d-affd-4a56-ad88-777fa0ba27ab)] -&gt; xpath: //*[@id=&apos;pim&apos;]/ul/li[2]/a]
+Session ID: 690e760d-affd-4a56-ad88-777fa0ba27ab
+	at org.testng.Assert.fail(Assert.java:111)
+	at com.Hrms.utils.TestNGUtility.assertFail(TestNGUtility.java:41)
+	at com.Hrms.utils.CommonUtils.clickElement(CommonUtils.java:232)
+	at com.Hrms.tests.TestPIMPage.addEmployeeThenVeify(TestPIMPage.java:44)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+</pre></div></td>
+<td>6</td>
+<td>com.Hrms.tests.TestPIMPage@6b695b06</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.Hrms.tests.TestPIMPage.editEmployeeDetails()'><b>editEmployeeDetails</b><br>Test class: com.Hrms.tests.TestPIMPage<br>Test method: Verify that employee details can be edited successfully</td>
+<td></td>
+<td>0</td>
+<td>com.Hrms.tests.TestPIMPage@6b695b06</td></tr>
+<tr>
+<td title='com.Hrms.tests.TestPIMPage.filterEmployeeList()'><b>filterEmployeeList</b><br>Test class: com.Hrms.tests.TestPIMPage<br>Test method: Verify that the employee list can be filtered based on various criteria</td>
+<td></td>
+<td>0</td>
+<td>com.Hrms.tests.TestPIMPage@6b695b06</td></tr>
+<tr>
+<td title='com.Hrms.tests.TestPIMPage.addEmployeePhotos()'><b>addEmployeePhotos</b><br>Test class: com.Hrms.tests.TestPIMPage<br>Test method: Verify that photos can be added to employee profiles</td>
+<td></td>
+<td>0</td>
+<td>com.Hrms.tests.TestPIMPage@6b695b06</td></tr>
+<tr>
+<td title='com.Hrms.tests.TestPIMPage.deleteEmployee()'><b>deleteEmployee</b><br>Test class: com.Hrms.tests.TestPIMPage<br>Test method: Verify that an employee can be deleted successfully</td>
+<td></td>
+<td>0</td>
+<td>com.Hrms.tests.TestPIMPage@6b695b06</td></tr>
+<tr>
+<td title='com.Hrms.tests.TestPIMPage.viewEmployeeList()'><b>viewEmployeeList</b><br>Test class: com.Hrms.tests.TestPIMPage<br>Test method: Verify that the employee list is displayed correctly with accurate information</td>
+<td></td>
+<td>0</td>
+<td>com.Hrms.tests.TestPIMPage@6b695b06</td></tr>
+<tr>
+<td title='com.Hrms.tests.TestPIMPage.searchEmployee()'><b>searchEmployee</b><br>Test class: com.Hrms.tests.TestPIMPage<br>Test method: Verify that the search functionality returns the correct employee</td>
+<td></td>
+<td>0</td>
+<td>com.Hrms.tests.TestPIMPage@6b695b06</td></tr>
+<tr>
+<td title='com.Hrms.tests.TestPIMPage.viewEmployeeDetails()'><b>viewEmployeeDetails</b><br>Test class: com.Hrms.tests.TestPIMPage<br>Test method: Verify that employee details are correctly displayed</td>
+<td></td>
+<td>0</td>
+<td>com.Hrms.tests.TestPIMPage@6b695b06</td></tr>
+<tr>
+<td title='com.Hrms.tests.TestPIMPage.editEmploymentStatus()'><b>editEmploymentStatus</b><br>Test class: com.Hrms.tests.TestPIMPage<br>Test method: Verify that the employment status of an employee can be updated</td>
+<td></td>
+<td>0</td>
+<td>com.Hrms.tests.TestPIMPage@6b695b06</td></tr>
+</table><p>
+</body>
+</html>
