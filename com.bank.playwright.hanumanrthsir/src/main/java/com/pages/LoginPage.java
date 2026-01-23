@@ -1,6 +1,5 @@
 package com.pages;
 
-import com.basepack.BasePage;
 import com.util.CommonUtils;
 import com.util.TestngUtils;
 

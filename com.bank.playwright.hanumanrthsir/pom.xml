@@ -87,7 +87,7 @@
 
 						<!-- TestNG suite XML files -->
 
-						<suiteXmlFile>testng.xml</suiteXmlFile>
+						<suiteXmlFile>TestngTestPIm.xml</suiteXmlFile>
 
 					</suiteXmlFiles>
 

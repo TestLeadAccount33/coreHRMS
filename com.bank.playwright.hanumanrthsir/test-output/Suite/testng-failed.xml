@@ -6,7 +6,6 @@
       <class name="com.tests.TestPIMPage">
         <methods>
           <include name="addEmployeeThenVerify"/>
-          <include name="teardown"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- com.tests.TestPIMPage -->

@@ -7,9 +7,10 @@ public class TestngUtils {
 	
 	 public static void assertTrue(String actual,String expected)
 	 {
+		 Assert.assertNotNull(actual,"Actual text is NULL");
 		 if(actual.contains(expected))
 		 {
-			 Assert.assertTrue(false);
+			 Assert.assertTrue(true);
 		 }
 		 else
 		 {
@@ -18,8 +19,8 @@ public class TestngUtils {
 	 }
 
 	 public static void assertFail(String message) {
-		// TODO Auto-generated method stub
 		
+
 	 }
 	 
 	 
