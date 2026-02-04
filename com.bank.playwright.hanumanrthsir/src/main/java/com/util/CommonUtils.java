@@ -5,6 +5,7 @@ import java.util.Properties;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserType;
+import com.microsoft.playwright.FrameLocator;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
@@ -88,7 +89,19 @@ public class CommonUtils {
 		
 			
 		}
+		public static void enterValue(FrameLocator frame,String selector,String value)
 		
+		{
+			try
+			{
+				frame.locator(selector).fill(value);
+			}
+				
+			catch(Exception e)
+			{
+				TestngUtils.assertFail(e.getMessage());
+			}
+		}
 		public static Locator findElement(String selector)
 		{
 			Locator element = null;
@@ -115,6 +128,17 @@ public class CommonUtils {
 				TestngUtils.assertFail(e.getMessage());
 			}
 		}
+		public static void clickElement(FrameLocator frame,String selector)
+		{
+			try
+			{
+				frame.locator(selector).click();
+			}
+			catch(Exception e)
+			{
+				TestngUtils.assertFail(e.getMessage());
+			}
+		}
 		
 		public static String getElementText(String selector)
 		{
@@ -128,6 +152,20 @@ public class CommonUtils {
 				TestngUtils.assertFail(e.getMessage());
 			}
 			return elementText;
+		}
+	//-----------------------getElementTextFromFrame------------------------------------//
+		public static String getElementText(FrameLocator frame,String selector)
+		{
+			String addEmpText =null;
+			try
+			{
+				 addEmpText =frame.locator(selector).textContent();
+			}
+			catch(Exception e)
+			{
+				TestngUtils.assertFail(e.getMessage());
+			}
+			return addEmpText;
 		}
 		
 		//----------------------Mouse Movement-----------------------------------//
@@ -319,7 +357,85 @@ public class CommonUtils {
 					 TestngUtils.assertFail(e.getMessage());
 				 }
 			 }
-	
+	       //-------------------------SwitchToFrame------------------------//
+			 public static FrameLocator switchToFrameUsingIdOrName(String selector)
+			 {
+				 FrameLocator frame = null;
+			   try
+			   {
+				    frame= page.frameLocator(selector);
+			   }
+			   catch(Exception e)
+			   {
+				   TestngUtils.assertFail(e.getMessage());
+				   
+			   }
+			   return frame;
+			 }
+			 public static void selectDropdownValue(FrameLocator frame,String selector,String option)
+			 {
+				 try
+				 {
+					frame.locator(selector).selectOption(option) ;  // selectOpition(new selectOption().setValue/lable/index("");
+				 }
+				 catch(Exception e)
+				 {
+					 TestngUtils.assertFail(e.getMessage());
+				 }
+			 }
+	           //-----------------------SingleCheckBox--------------------------------//
+			 public static void isElementChecked(FrameLocator frame, String selector)
+			 {
+				 Locator smokerchkBox =null;
+				 try
+				 {
+					smokerchkBox = frame.locator(selector);
+					smokerchkBox.click();
+					if(smokerchkBox.isChecked())
+					{
+						System.out.println("SmokerChkBox is selected");
+					}
+					else
+					{
+						System.out.println("SmokerChkBox is not selected");
+					}
+					 
+					 
+				 }
+				 catch(Exception e)
+				 {
+					 TestngUtils.assertFail(e.getMessage());
+				 }
+			 }
+	           //--------------------MultipleCheckBoxsesORRadioButtons---------------------//
+			 public static void verifyMultipleChkOrRadioButtons(FrameLocator frame,String selector)
+			 {
+				 Locator multipleRadioButtons=null;
+				 try
+				 {
+					 multipleRadioButtons = frame.locator(selector);
+					System.out.println("RadioButtonsCount :"+multipleRadioButtons.count());
+					for(int i=0; i<multipleRadioButtons.count(); i=i+1)
+					{
+						multipleRadioButtons.nth(i).click();
+						
+						if(multipleRadioButtons.nth(i).isChecked())
+						{
+							System.out.println("radioButton is selected");
+						}
+						else
+						{
+							System.out.println("RadioButton is not selected");
+						}
+					}
+					
+					 
+				 }
+				 catch(Exception e)
+				 {
+					 TestngUtils.assertFail(e.getMessage());
+				 }
+			 }
 		 
 		 
 		

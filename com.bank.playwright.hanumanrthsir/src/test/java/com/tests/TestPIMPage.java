@@ -2,6 +2,7 @@ package com.tests;
 import org.testng.annotations.Test;
 
 import com.basepack.BasePage;
+import com.microsoft.playwright.FrameLocator;
 import com.pages.LoginPage;
 import com.pages.PIMPage;
 import com.util.CommonUtils;
@@ -29,5 +30,22 @@ public class TestPIMPage extends BasePage {
      CommonUtils.clickElement(pimPage.getAddEmp()); // identify and click
      Thread.sleep(5000);
      
+   //pimPage.getFrame(); // code meaning is "#rightMenu"
+     FrameLocator pimframe = CommonUtils.switchToFrameUsingIdOrName(pimPage.getFrame());
+     CommonUtils.enterValue(pimframe,pimPage.getFirstName(),"Bhagavati");
+     CommonUtils.enterValue(pimframe,pimPage.getLastName(),"k");
+     
+    CommonUtils.clickElement(pimframe, pimPage.getSaveButton());
+    CommonUtils.clickElement(pimframe,pimPage.getEditbutton());
+    CommonUtils.isElementChecked(pimframe,pimPage.getSmokerChkBox());
+    CommonUtils.verifyMultipleChkOrRadioButtons(pimframe,pimPage.getRadioButtonsOnGender());
+    CommonUtils.clickElement(pimframe,pimPage.getSavaInPersonalDetails());
+    CommonUtils.clickElement(pimframe,pimPage.getBackButton());
+    CommonUtils.selectDropdownValue(pimframe,pimPage.getSearchByDropdown(),"Emp. First Name");
+    CommonUtils.enterValue( pimframe, pimPage.getSearchFor(),"Bhagavati");
+    Thread.sleep(5000);
+    CommonUtils.clickElement(pimframe,pimPage.getSearchButton());
+    Thread.sleep(20000);
+    TestngUtils.assertTrue(CommonUtils.getElementText(pimframe,pimPage.verifyAddEmployeeText()),"k"); 
   }
 }

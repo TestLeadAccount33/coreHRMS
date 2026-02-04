@@ -12,7 +12,7 @@ import com.microsoft.playwright.Playwright;
 public class mouseHoverByActions {
 	Page page;
   @Test
-  public void f() throws InterruptedException {
+  public void mouseHoverByMouse() throws InterruptedException {
 	// Verify tittle[get,print and verify]
       // 1. get
    String  title = page.title();  //OrangeHRM - New Level of HR Management
